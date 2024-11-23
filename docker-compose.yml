@@ -6,7 +6,7 @@ services:
     container_name: youtrack
     restart: always
     ports:
-      - "8080:8080" # คุณสามารถปรับพอร์ตได้ตามต้องการ
+      - "8080:8080" 
     environment:
       YOUTRACK_DEFAULT_BASE_URL: "http://localhost:8080"
     volumes:

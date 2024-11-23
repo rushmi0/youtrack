@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  youtrack:
+    image: jetbrains/youtrack:2024.3.51866
+    container_name: youtrack
+    restart: always
+    ports:
+      - "8080:8080" # คุณสามารถปรับพอร์ตได้ตามต้องการ
+    environment:
+      YOUTRACK_DEFAULT_BASE_URL: "http://localhost:8080"
+    volumes:
+      - youtrack_data:/opt/youtrack/data  # เก็บข้อมูลของ YouTrack
+      - youtrack_logs:/opt/youtrack/logs  # เก็บ log ของ YouTrack
+      - youtrack_backup:/opt/youtrack/backups # เก็บไฟล์ backup ของ YouTrack
+
+volumes:
+  youtrack_data:
+  youtrack_logs:
+  youtrack_backup:
